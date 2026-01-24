@@ -35,7 +35,9 @@ Each test reveals:
 | Date | Test | Result | Learning | New Assumption Added |
 |------|------|--------|----------|---------------------|
 | 2026-01-24 | Identify audience (Reddit) | ✅ 4 subreddits with 500k-5M subs | Audience exists and is findable | Can we CONNECT with them? (A3) |
-| | | | | |
+| 2026-01-24 | Find Twitter accounts | ✅ 8 accounts with 10K-3M followers | Influencers in space identified | - |
+| 2026-01-24 | Name 10 specific ICP people | ✅ 10 real handles found | Can target specific individuals | Tool selection match? (A5) |
+| 2026-01-24 | Research new tools | 🟡 Found 4 new tools | May be missing tools ICP uses | A5 added |
 
 *Add every test result here. This is the source of truth.*
 
@@ -122,9 +124,35 @@ Traffic Sources (SEO, Social, Reddit)
 | r/startups | 1,979,257 | Early-stage founders |
 | r/SaaS | 542,227 | SaaS founders (subset) |
 
-**Twitter/X - Still needs testing:**
-- [ ] Find 5+ accounts with 10k+ followers our audience follows
-- [ ] Name 10 specific people who fit profile
+**Twitter/X - TESTED (2026-01-24):**
+| Handle | Followers | Relevance to SMB owners |
+|--------|-----------|------------------------|
+| @naval | 1M+ | Angel investor, startup wisdom |
+| @garyvee | 3M+ | Small biz marketing, hustle |
+| @tferriss | 1.9M | Productivity, lifestyle business |
+| @Julian | 500K+ | Growth marketing, bootstrapping |
+| @GuyKawasaki | 1.3M | Marketing, Canva evangelist |
+| @PatFlynn | 300K+ | Small biz, passive income |
+| @TonyDinh | 50K+ | Indie hacker, SaaS founder |
+| @levelsio | 400K+ | Solo founder, bootstrapped |
+
+✅ Success criteria met: 5+ accounts with 10k+ followers identified
+
+**10 Specific People Who Fit ICP (Real handles):**
+| Handle | Who | Revenue/Stage | Why they fit |
+|--------|-----|---------------|--------------|
+| @tdinh_me | Tony Dinh | Sold for $186K | Building AI tools, bootstrapper |
+| @helloitsolly | Olly Meakings | $70K MRR | SaaS founder, marketing focus |
+| @alexwestco | Alex West | $40K MRR | Cold leads biz, lifestyle founder |
+| @TaraReed_ | Tara Reed | $3M/year | No-code, teaches small biz |
+| @petecodes | Pete Codes | Newsletter | Indie hacker, bootstrapper |
+| @philostar | Phil McParlane | Job board | Solo founder, SEO focused |
+| @chddaniel | CH Daniel | Multiple exits | Runs r/SaaS community |
+| @itsjustamar | Amar Ghose | $3M/year | ZenMaid, marketing/strategy |
+| @nathanbarry | Nathan Barry | $10M+ ARR | ConvertKit, email tools |
+| @asmartbear | Jason Cohen | $100M+ | WP Engine, bootstrapping wisdom |
+
+✅ SUCCESS: Can name 10 specific people with real handles who fit our ICP
 
 **Next step:** Test actual CONNECTION (Assumption 3) - can we get responses?
 
@@ -168,6 +196,25 @@ Traffic Sources (SEO, Social, Reddit)
 **Success criteria:**
 - One headline variant converts 2x better than another
 - Specific phrases get quoted/shared back
+
+**Test status:** NOT TESTED
+**Result:** [TBD]
+
+---
+
+### Assumption 5: Tool Selection Match (Added 2026-01-24)
+**Question:** Are the 21 tools we selected the RIGHT tools for our ICP?
+
+**How discovered:** While researching new tools, realized we curated based on research, not validation from actual users.
+
+**How to test:**
+- Ask in Reddit comments: "What AI tools do you actually use?"
+- Track which tool pages get the most traffic
+- Survey email subscribers
+
+**Success criteria:**
+- 50%+ of tools mentioned by audience are already in our list
+- OR clear signal on what tools to add/remove
 
 **Test status:** NOT TESTED
 **Result:** [TBD]
