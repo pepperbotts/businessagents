@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Agents — AI Tools That Actually Work for Small Businesses</title>
+    <meta name="description" content="Curated directory of AI agents and tools for small businesses. Customer support, sales automation, content creation, and operations. No hype, just what works.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --border: #262626;
+            --text: #fafafa;
+            --text-secondary: #a1a1a1;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --green: #22c55e;
+            --yellow: #eab308;
+            --red: #ef4444;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .logo span { color: var(--accent); }
+        
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover { color: var(--text); }
+        
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 40px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Categories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+        
+        .category-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            border-color: var(--accent);
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Tools Grid */
+        .tools-section {
+            padding: 40px 0;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .tool-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.2s;
+        }
+        
+        .tool-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .tool-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .tool-badge {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .badge-free { background: rgba(34, 197, 94, 0.2); color: var(--green); }
+        .badge-freemium { background: rgba(234, 179, 8, 0.2); color: var(--yellow); }
+        .badge-paid { background: rgba(59, 130, 246, 0.2); color: var(--accent); }
+        
+        .tool-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+        
+        .tool-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        
+        .tag {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        
+        .tool-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .tool-price {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .tool-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .tool-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Use Case Sections */
+        .use-case {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+        
+        .use-case h2 {
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+        }
+        
+        .use-case > p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--text);
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+        }
+        
+        .cta-section p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .cta-btn:hover {
+            background: var(--accent-hover);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero-stats { flex-direction: column; gap: 24px; }
+            .tools-grid { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+            .footer-links a { margin: 0 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">Business<span>Agents</span></a>
+            <nav>
+                <a href="#support">Support</a>
+                <a href="#sales">Sales</a>
+                <a href="#content">Content</a>
+                <a href="#operations">Operations</a>
+                <a href="#submit">Submit Tool</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="hero">
+            <h1>AI Tools That Actually Work<br>for Small Businesses</h1>
+            <p>No hype. No fluff. Just curated AI agents and tools that solve real problems, with honest pricing and real reviews from business owners.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" id="tool-count">47</div>
+                    <div class="stat-label">Tools Reviewed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">Updated</div>
+                    <div class="stat-label">January 2026</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Customer Support Tools -->
+        <section class="use-case" id="support">
+            <h2>🎧 Customer Support</h2>
+            <p>Handle support tickets, answer FAQs, and keep customers happy without hiring a team.</p>
+            
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Intercom Fin</h3>
+                        <span class="tool-badge badge-paid">Paid</span>
+                    </div>
+                    <p class="tool-desc">AI agent that resolves 50%+ of support tickets instantly. Learns from your help docs and past conversations. Best for established businesses with existing support volume.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Chat</span>
+                        <span class="tag">Email</span>
+                        <span class="tag">Knowledge Base</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">From $0.99/resolution</span>
+                        <a href="https://www.intercom.com/fin" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Tidio</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">Live chat + AI chatbot combo. Great for e-commerce. Free tier handles basics, AI features in paid plans. Good middle ground between cost and capability.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Live Chat</span>
+                        <span class="tag">Chatbot</span>
+                        <span class="tag">E-commerce</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $29/mo</span>
+                        <a href="https://www.tidio.com" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Crisp</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">All-in-one customer messaging with AI copilot. Free for 2 users. MagicReply uses AI to draft responses. Good for startups scaling up.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Multichannel</span>
+                        <span class="tag">AI Copilot</span>
+                        <span class="tag">CRM</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $95/mo</span>
+                        <a href="https://crisp.chat" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Help Scout</h3>
+                        <span class="tool-badge badge-paid">Paid</span>
+                    </div>
+                    <p class="tool-desc">Human-first help desk with AI features. AI summarizes long threads, suggests replies, and drafts responses. Best for teams who want AI assist, not AI replacement.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Help Desk</span>
+                        <span class="tag">Email</span>
+                        <span class="tag">Docs</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">From $20/user/mo</span>
+                        <a href="https://www.helpscout.com" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Sales & Marketing Tools -->
+        <section class="use-case" id="sales">
+            <h2>📈 Sales & Marketing</h2>
+            <p>Generate leads, write outreach, and close deals faster with AI that actually understands selling.</p>
+            
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Clay</h3>
+                        <span class="tool-badge badge-paid">Paid</span>
+                    </div>
+                    <p class="tool-desc">Data enrichment + AI outreach powerhouse. Pulls data from 75+ sources, uses AI to write personalized emails at scale. The pros use this.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Lead Gen</span>
+                        <span class="tag">Enrichment</span>
+                        <span class="tag">Outreach</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">From $149/mo</span>
+                        <a href="https://www.clay.com" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Apollo.io</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">B2B database + outreach platform with AI writing. Free tier is genuinely useful. 275M+ contacts. AI helps write and A/B test emails.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Database</span>
+                        <span class="tag">Email Sequences</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $79/mo</span>
+                        <a href="https://www.apollo.io" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Instantly.ai</h3>
+                        <span class="tool-badge badge-paid">Paid</span>
+                    </div>
+                    <p class="tool-desc">Cold email at scale with AI warmup and writing. Unlimited email accounts. AI personalizes at scale. Built for agencies and heavy senders.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Cold Email</span>
+                        <span class="tag">Warmup</span>
+                        <span class="tag">Deliverability</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">From $37/mo</span>
+                        <a href="https://instantly.ai" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Lavender</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">AI email coach that scores and improves your sales emails in real-time. Shows what works, fixes what doesn't. Like Grammarly for sales.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Email Coaching</span>
+                        <span class="tag">Chrome Extension</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $29/mo</span>
+                        <a href="https://www.lavender.ai" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Drift</h3>
+                        <span class="tool-badge badge-paid">Paid</span>
+                    </div>
+                    <p class="tool-desc">Conversational AI for B2B websites. Qualifies visitors, books meetings, answers questions 24/7. Enterprise-grade but SMB-friendly pricing now.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Chatbot</span>
+                        <span class="tag">Lead Qualification</span>
+                        <span class="tag">Meeting Booking</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">From $2,500/mo</span>
+                        <a href="https://www.drift.com" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Content Creation Tools -->
+        <section class="use-case" id="content">
+            <h2>✍️ Content Creation</h2>
+            <p>Write blogs, social posts, emails, and marketing copy without staring at a blank page.</p>
+            
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Jasper</h3>
+                        <span class="tool-badge badge-paid">Paid</span>
+                    </div>
+                    <p class="tool-desc">The OG AI writing tool, now with brand voice training. Great for teams who need consistent content at scale. Marketing-focused features.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Long-form</span>
+                        <span class="tag">Brand Voice</span>
+                        <span class="tag">Team Collaboration</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">From $49/mo</span>
+                        <a href="https://www.jasper.ai" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Copy.ai</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">Quick copy generation for ads, social, and email. Free tier is decent for solopreneurs. Workflows automate repetitive content tasks.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Short-form</span>
+                        <span class="tag">Workflows</span>
+                        <span class="tag">Templates</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $49/mo</span>
+                        <a href="https://www.copy.ai" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Writer</h3>
+                        <span class="tool-badge badge-paid">Paid</span>
+                    </div>
+                    <p class="tool-desc">Enterprise AI writing with governance. Train on your style guide, ensure compliance, maintain brand consistency. For businesses who take content seriously.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Enterprise</span>
+                        <span class="tag">Style Guide</span>
+                        <span class="tag">Compliance</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Custom pricing</span>
+                        <a href="https://writer.com" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Writesonic</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">AI writer + Chatsonic (ChatGPT alternative with real-time data). Good for SEO content. Free tier includes 10K words/month.</p>
+                    <div class="tool-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Blog Posts</span>
+                        <span class="tag">Real-time Data</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $19/mo</span>
+                        <a href="https://writesonic.com" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Descript</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">Edit video/audio by editing text. AI removes filler words, generates clips, creates audiograms. Game-changer for podcasters and video creators.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Video</span>
+                        <span class="tag">Podcast</span>
+                        <span class="tag">Transcription</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $24/mo</span>
+                        <a href="https://www.descript.com" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Canva Magic Studio</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">AI design tools inside Canva. Generate images, remove backgrounds, resize for any platform. Design without designers.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Design</span>
+                        <span class="tag">Images</span>
+                        <span class="tag">Social Media</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $13/mo</span>
+                        <a href="https://www.canva.com" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Operations Tools -->
+        <section class="use-case" id="operations">
+            <h2>⚙️ Operations & Productivity</h2>
+            <p>Automate the boring stuff. Meeting notes, data entry, scheduling, and workflow automation.</p>
+            
+            <div class="tools-grid">
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Notion AI</h3>
+                        <span class="tool-badge badge-paid">Paid</span>
+                    </div>
+                    <p class="tool-desc">AI writing and Q&A built into Notion. Summarize docs, draft content, answer questions about your workspace. Best if you're already in Notion.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Docs</span>
+                        <span class="tag">Knowledge Base</span>
+                        <span class="tag">Workspace</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">$10/user/mo add-on</span>
+                        <a href="https://www.notion.so/product/ai" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Fireflies.ai</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">AI meeting assistant that records, transcribes, and summarizes calls. Integrates with Zoom, Meet, Teams. Never take meeting notes again.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Meetings</span>
+                        <span class="tag">Transcription</span>
+                        <span class="tag">Summaries</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $19/mo</span>
+                        <a href="https://fireflies.ai" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Zapier AI</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">Build automations with natural language. Describe what you want, Zapier creates the workflow. Plus AI-powered data transformation in zaps.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Automation</span>
+                        <span class="tag">Integrations</span>
+                        <span class="tag">No-code</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $69/mo</span>
+                        <a href="https://zapier.com/ai" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Reclaim.ai</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">AI scheduling assistant that protects your focus time, auto-schedules tasks, and finds meeting times. Calendar Tetris, solved.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Calendar</span>
+                        <span class="tag">Scheduling</span>
+                        <span class="tag">Task Management</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $12/mo</span>
+                        <a href="https://reclaim.ai" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Otter.ai</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">Real-time transcription and meeting summaries. OtterPilot auto-joins your meetings. Good free tier for light use.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Transcription</span>
+                        <span class="tag">Real-time</span>
+                        <span class="tag">Collaboration</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $17/mo</span>
+                        <a href="https://otter.ai" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+                
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-name">Bardeen</h3>
+                        <span class="tool-badge badge-freemium">Freemium</span>
+                    </div>
+                    <p class="tool-desc">Browser automation with AI. Scrape data, automate workflows, control apps—all from natural language commands. Power user's secret weapon.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Automation</span>
+                        <span class="tag">Scraping</span>
+                        <span class="tag">Browser Extension</span>
+                    </div>
+                    <div class="tool-meta">
+                        <span class="tool-price">Free - $10/mo</span>
+                        <a href="https://www.bardeen.ai" class="tool-link" target="_blank">Learn more →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Submit CTA -->
+        <section class="cta-section" id="submit">
+            <h2>Building an AI tool for businesses?</h2>
+            <p>Get discovered by business owners looking for solutions. Submit your tool for review.</p>
+            <a href="mailto:submit@businessagents.io?subject=Tool Submission" class="cta-btn">Submit Your Tool →</a>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container footer-content">
+            <p class="footer-text">© 2026 BusinessAgents.io — Curated by AI, verified by humans.</p>
+            <div class="footer-links">
+                <a href="mailto:hello@businessagents.io">Contact</a>
+                <a href="https://twitter.com/PepperBotts_AI" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
