@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Tool — BusinessAgents.io</title>
+    <meta name="description" content="Submit your AI tool to be featured in our directory for small businesses.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --border: #262626;
+            --text: #fafafa;
+            --text-secondary: #a1a1a1;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --green: #22c55e;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .logo span { color: var(--accent); }
+        
+        .form-section {
+            padding: 60px 0;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        label {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .required::after {
+            content: ' *';
+            color: #ef4444;
+        }
+        
+        input, textarea, select {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 1rem;
+            color: var(--text);
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        select {
+            cursor: pointer;
+        }
+        
+        .helper {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        button[type="submit"] {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 16px;
+        }
+        
+        button[type="submit"]:hover {
+            background: var(--accent-hover);
+        }
+        
+        .success-message {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid var(--green);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            display: none;
+        }
+        
+        .success-message h2 {
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">Business<span>Agents</span></a>
+    </header>
+    
+    <main class="container">
+        <section class="form-section">
+            <h1>Submit Your Tool</h1>
+            <p class="subtitle">Get your AI tool featured in our directory. We review all submissions and add tools that genuinely help small businesses.</p>
+            
+            <form action="https://formsubmit.co/pepper@founderlabs.io" method="POST" id="submit-form">
+                <div class="form-group">
+                    <label for="tool-name" class="required">Tool Name</label>
+                    <input type="text" id="tool-name" name="tool_name" required placeholder="e.g., Acme AI Assistant">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tool-url" class="required">Website URL</label>
+                    <input type="url" id="tool-url" name="tool_url" required placeholder="https://yourproduct.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="category" class="required">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category...</option>
+                        <option value="support">Customer Support</option>
+                        <option value="sales">Sales & Marketing</option>
+                        <option value="content">Content Creation</option>
+                        <option value="operations">Operations & Productivity</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pricing" class="required">Pricing Model</label>
+                    <select id="pricing" name="pricing" required>
+                        <option value="">Select pricing...</option>
+                        <option value="free">Free</option>
+                        <option value="freemium">Freemium</option>
+                        <option value="paid">Paid</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="price-details">Price Details</label>
+                    <input type="text" id="price-details" name="price_details" placeholder="e.g., Free - $29/mo, or From $49/mo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description" class="required">Short Description</label>
+                    <textarea id="description" name="description" required placeholder="Describe what your tool does and why small businesses should use it (2-3 sentences)."></textarea>
+                    <span class="helper">Keep it honest and specific. We'll edit for consistency.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-email" class="required">Your Email</label>
+                    <input type="email" id="contact-email" name="email" required placeholder="you@company.com">
+                    <span class="helper">We'll notify you when your tool is reviewed.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="affiliate">Affiliate Program URL (optional)</label>
+                    <input type="url" id="affiliate" name="affiliate_url" placeholder="https://yourproduct.com/affiliates">
+                    <span class="helper">If you have an affiliate program, we may use it.</span>
+                </div>
+                
+                <input type="hidden" name="_subject" value="New Tool Submission: BusinessAgents.io">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://businessagents.io/submit?success=true">
+                <input type="text" name="_honey" style="display:none">
+                
+                <button type="submit">Submit for Review →</button>
+            </form>
+            
+            <div class="success-message" id="success">
+                <h2>✓ Submitted!</h2>
+                <p>Thanks for submitting your tool. We'll review it and get back to you within a few days.</p>
+                <p style="margin-top: 16px;"><a href="/" style="color: var(--accent);">← Back to directory</a></p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <a href="/">← Back to BusinessAgents.io</a>
+    </footer>
+    
+    <script>
+        // Check if returning from successful submission
+        if (window.location.search.includes('success=true')) {
+            document.getElementById('submit-form').style.display = 'none';
+            document.getElementById('success').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
