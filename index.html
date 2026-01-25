@@ -823,5 +823,48 @@
             </div>
         </div>
     </footer>
+    <!-- Feedback Widget -->
+    <div id="feedback-widget">
+        <button id="feedback-btn" onclick="toggleFeedback()">💬 Quick question</button>
+        <div id="feedback-modal" style="display:none;">
+            <form action="https://formsubmit.co/pepper@founderlabs.io" method="POST">
+                <input type="hidden" name="_subject" value="BusinessAgents.io Feedback">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://businessagents.io?thanks=1">
+                <p><strong>What brought you here today?</strong></p>
+                <label><input type="radio" name="intent" value="support" required> Looking for customer support tools</label>
+                <label><input type="radio" name="intent" value="sales"> Need help with sales/outreach</label>
+                <label><input type="radio" name="intent" value="content"> Want to automate content creation</label>
+                <label><input type="radio" name="intent" value="operations"> Trying to save time on operations</label>
+                <label><input type="radio" name="intent" value="browsing"> Just browsing / researching AI</label>
+                <input type="text" name="other" placeholder="Or tell us in your own words (optional)">
+                <button type="submit">Submit</button>
+                <button type="button" onclick="toggleFeedback()">×</button>
+            </form>
+        </div>
+    </div>
+    <style>
+        #feedback-widget { position: fixed; bottom: 20px; right: 20px; z-index: 1000; font-family: Inter, sans-serif; }
+        #feedback-btn { background: var(--accent); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        #feedback-btn:hover { background: var(--accent-hover); }
+        #feedback-modal { position: absolute; bottom: 60px; right: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; width: 300px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+        #feedback-modal p { margin-bottom: 15px; color: var(--text); }
+        #feedback-modal label { display: block; margin: 8px 0; color: var(--text-secondary); cursor: pointer; font-size: 14px; }
+        #feedback-modal input[type="radio"] { margin-right: 8px; }
+        #feedback-modal input[type="text"] { width: 100%; padding: 8px; margin: 12px 0; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 14px; }
+        #feedback-modal button[type="submit"] { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; width: 100%; margin-top: 8px; }
+        #feedback-modal button[type="button"] { position: absolute; top: 10px; right: 10px; background: none; border: none; color: var(--text-secondary); font-size: 20px; cursor: pointer; }
+    </style>
+    <script>
+        function toggleFeedback() { 
+            var m = document.getElementById('feedback-modal'); 
+            m.style.display = m.style.display === 'none' ? 'block' : 'none'; 
+        }
+        // Show thanks message if redirected after submit
+        if(window.location.search.includes('thanks=1')) {
+            alert('Thanks for your feedback!');
+            history.replaceState(null, '', window.location.pathname);
+        }
+    </script>
 </body>
 </html>
