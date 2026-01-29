@@ -79,20 +79,19 @@
             <h2>Get the free checklist</h2>
             <form action="/api/form" method="POST">
                 <input type="hidden" name="form_type" value="checklist_download">
-                <input type="text" name="_honey" style="display:none">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                 <input type="email" name="email" placeholder="Enter your email" required>
-                <input type="hidden" name="_subject" value="Checklist Download: BusinessAgents.io">
                 <input type="hidden" name="_next" value="https://businessagents.io/checklist?success=true">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="text" name="_honey" style="display:none">
-                <button type="submit">Send me the checklist →</button>
+                <button type="submit">Get the checklist →</button>
             </form>
             <p class="privacy">No spam. Unsubscribe anytime.</p>
         </section>
         
         <section class="success" id="success">
-            <h2>✓ Check your inbox!</h2>
-            <p>The checklist is on its way to your email.</p>
+            <h2>✓ Here's your checklist!</h2>
+            <p style="margin-bottom:24px">Thanks for signing up. Download your free AI Tools Checklist below.</p>
+            <a href="/assets/ai-tools-checklist.html" target="_blank" class="download-btn" style="display:inline-block;background:var(--accent);color:white;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:500;margin-bottom:16px;">📥 View & Save Checklist</a>
+            <p style="margin-top:24px;color:var(--text-secondary);font-size:0.9rem;">We'll also send occasional updates on new tools. Unsubscribe anytime.</p>
             <p style="margin-top:24px"><a href="/" style="color:var(--accent)">Browse all tools →</a></p>
         </section>
     </main>

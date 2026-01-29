@@ -134,6 +134,22 @@ const tests = [
                                res.body.includes('onsubmit');
     assert(hasSuccessHandling, 'Missing success handling');
   }),
+
+  // Test 7: Checklist success page has download link (not email promise)
+  test('Checklist success has download link', async () => {
+    const res = await fetch(`${SITE_URL}/checklist`);
+    assert(res.body.includes('ai-tools-checklist'), 'Missing checklist download link');
+    // Should NOT promise email delivery
+    const promisesEmail = res.body.includes('Check your inbox') && !res.body.includes('display:none');
+    assert(!promisesEmail || res.body.includes('ai-tools-checklist'), 'Success message promises email but should offer download');
+  }),
+
+  // Test 8: Checklist asset exists
+  test('Checklist download file exists', async () => {
+    const res = await fetch(`${SITE_URL}/assets/ai-tools-checklist.html`);
+    assert(res.status === 200, `Checklist file returned ${res.status}`);
+    assert(res.body.includes('AI Tools Checklist'), 'Checklist content missing');
+  }),
 ];
 
 // =============================================================================
