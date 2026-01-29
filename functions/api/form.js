@@ -8,9 +8,13 @@
 export async function onRequestPost(context) {
   const { request, env } = context;
   
-  // CORS headers
+  // CORS headers - allow both sites
+  const origin = request.headers.get('origin') || '';
+  const allowedOrigins = ['https://businessagents.io', 'https://pepperbotts.ai'];
+  const allowOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+  
   const headers = {
-    'Access-Control-Allow-Origin': 'https://businessagents.io',
+    'Access-Control-Allow-Origin': allowOrigin,
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Content-Type': 'application/json',
@@ -104,10 +108,14 @@ export async function onRequestPost(context) {
   }
 }
 
-export async function onRequestOptions() {
+export async function onRequestOptions(context) {
+  const origin = context.request.headers.get('origin') || '';
+  const allowedOrigins = ['https://businessagents.io', 'https://pepperbotts.ai'];
+  const allowOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+  
   return new Response(null, {
     headers: {
-      'Access-Control-Allow-Origin': 'https://businessagents.io',
+      'Access-Control-Allow-Origin': allowOrigin,
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
     }
