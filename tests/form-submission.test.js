@@ -146,7 +146,7 @@ const tests = [
 
   // Test 8: Checklist asset exists
   test('Checklist download file exists', async () => {
-    const res = await fetch(`${SITE_URL}/assets/ai-tools-checklist.html`);
+    const res = await fetch(`${SITE_URL}/assets/ai-tools-checklist`);
     assert(res.status === 200, `Checklist file returned ${res.status}`);
     assert(res.body.includes('AI Tools Checklist'), 'Checklist content missing');
   }),
