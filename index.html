@@ -839,7 +839,9 @@
     <div id="feedback-widget">
         <button id="feedback-btn" onclick="toggleFeedback()">💬 Quick question</button>
         <div id="feedback-modal" style="display:none;">
-            <form action="https://formsubmit.co/pepper@founderlabs.io" method="POST">
+            <form action="/api/form" method="POST">
+                <input type="hidden" name="form_type" value="feedback">
+                <input type="text" name="_honey" style="display:none">
                 <input type="hidden" name="_subject" value="BusinessAgents.io Feedback">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://businessagents.io?thanks=1">

@@ -177,7 +177,9 @@
             <h1>Submit Your Tool</h1>
             <p class="subtitle">Get your AI tool featured in our directory. We review all submissions and add tools that genuinely help small businesses.</p>
             
-            <form action="https://formsubmit.co/pepper@founderlabs.io" method="POST" id="submit-form">
+            <form action="/api/form" method="POST" id="submit-form">
+                <input type="hidden" name="form_type" value="tool_submission">
+                <input type="text" name="_honey" style="display:none">
                 <div class="form-group">
                     <label for="tool-name" class="required">Tool Name</label>
                     <input type="text" id="tool-name" name="tool_name" required placeholder="e.g., Acme AI Assistant">

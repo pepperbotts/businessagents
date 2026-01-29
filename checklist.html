@@ -77,7 +77,9 @@
         
         <section class="form-section" id="download-form">
             <h2>Get the free checklist</h2>
-            <form action="https://formsubmit.co/pepper@founderlabs.io" method="POST">
+            <form action="/api/form" method="POST">
+                <input type="hidden" name="form_type" value="checklist_download">
+                <input type="text" name="_honey" style="display:none">
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <input type="hidden" name="_subject" value="Checklist Download: BusinessAgents.io">
                 <input type="hidden" name="_next" value="https://businessagents.io/checklist?success=true">
