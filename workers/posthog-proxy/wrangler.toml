@@ -1,0 +1,8 @@
+name = "posthog-proxy"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Route for businessagents.io/ingest/*
+routes = [
+  { pattern = "businessagents.io/ingest/*", zone_name = "businessagents.io" }
+]
