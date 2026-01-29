@@ -870,6 +870,46 @@
             alert('Thanks for your feedback!');
             history.replaceState(null, '', window.location.pathname);
         }
+        
+        // Track outbound link clicks
+        document.addEventListener('click', function(e) {
+            var link = e.target.closest('a');
+            if (!link) return;
+            
+            var href = link.href;
+            var isExternal = link.hostname !== window.location.hostname;
+            var isToolLink = link.classList.contains('tool-link');
+            
+            if (isExternal && href) {
+                // Get tool name from card if it's a tool link
+                var toolName = null;
+                var category = null;
+                
+                if (isToolLink) {
+                    var card = link.closest('.tool-card');
+                    if (card) {
+                        var nameEl = card.querySelector('.tool-name');
+                        toolName = nameEl ? nameEl.textContent : null;
+                    }
+                    var section = link.closest('.use-case');
+                    if (section) {
+                        var h2 = section.querySelector('h2');
+                        category = h2 ? h2.textContent.replace(/^[^\w]+/, '').trim() : null;
+                    }
+                }
+                
+                // Send to PostHog
+                if (window.posthog) {
+                    posthog.capture('outbound_click', {
+                        url: href,
+                        tool_name: toolName,
+                        category: category,
+                        link_text: link.textContent.trim(),
+                        is_tool_link: isToolLink
+                    });
+                }
+            }
+        });
     </script>
 </body>
 </html>
